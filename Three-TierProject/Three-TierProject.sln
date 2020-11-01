@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Three-TierProject", "Three-
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WoodWorkshop", "WoodWorkshop\WoodWorkshop.csproj", "{6BBED123-CE72-497E-AF0D-84178D815601}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WoodWorkshop.Domain", "WoodWorkshop.Domain\WoodWorkshop.Domain.csproj", "{571D00BE-77F6-43FF-9742-9786428C0C87}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WoodWorkshop.Data", "WoodWorkshop.Data\WoodWorkshop.Data.csproj", "{7753B5A4-03F8-40BA-9960-14BCB6F57B70}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{6BBED123-CE72-497E-AF0D-84178D815601}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6BBED123-CE72-497E-AF0D-84178D815601}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6BBED123-CE72-497E-AF0D-84178D815601}.Release|Any CPU.Build.0 = Release|Any CPU
+		{571D00BE-77F6-43FF-9742-9786428C0C87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{571D00BE-77F6-43FF-9742-9786428C0C87}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{571D00BE-77F6-43FF-9742-9786428C0C87}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{571D00BE-77F6-43FF-9742-9786428C0C87}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7753B5A4-03F8-40BA-9960-14BCB6F57B70}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7753B5A4-03F8-40BA-9960-14BCB6F57B70}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7753B5A4-03F8-40BA-9960-14BCB6F57B70}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7753B5A4-03F8-40BA-9960-14BCB6F57B70}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
