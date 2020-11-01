@@ -8,7 +8,7 @@ using WoodWorkshop.Enums;
 
 namespace WoodWorkshop.Models.PostModels
 {
-    class CreateWoodFurniturePostModel
+    public class CreateWoodFurniturePostModel
     {
         public string PhoneNumber { get; set; }
         public string FullName { get; set; }

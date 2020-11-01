@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WoodWorkshop.Enums
 {
-    enum FurnitureTypes
+    public enum FurnitureTypes
     {
         SomethingCustom = 0,
         Desk = 1,
