@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=10.0.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.10.1.1\lib\net461\AutoMapper.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -49,11 +52,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\WoodWorkshop\WoodWorkshop.csproj">
-      <Project>{6bbed123-ce72-497e-af0d-84178d815601}</Project>
-      <Name>WoodWorkshop</Name>
+    <ProjectReference Include="..\WoodWorkshop.Data\WoodWorkshop.Data.csproj">
+      <Project>{7753b5a4-03f8-40ba-9960-14bcb6f57b70}</Project>
+      <Name>WoodWorkshop.Data</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

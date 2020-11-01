@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using WoodWorkshop.Enums;
+using WoodWorkshop.Data.Enums;
 
 namespace WoodWorkshop.Data.Models
 {
