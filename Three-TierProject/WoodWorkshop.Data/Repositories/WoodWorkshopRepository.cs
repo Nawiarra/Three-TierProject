@@ -7,11 +7,11 @@ using WoodWorkshop.Data.Models;
 
 namespace WoodWorkshop.Data.Repositories
 {
-    class WoodFurnitureRepository
+    public class WoodWorkshopRepository
     {
         private List<WoodFurniture> WoodFurnitures { get; set; }
 
-        public WoodFurnitureRepository()
+        public WoodWorkshopRepository()
         {
             WoodFurnitures = new List<WoodFurniture>();
         }

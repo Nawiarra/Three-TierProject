@@ -1,7 +1,6 @@
 ﻿using System;
 using WoodWorkshop.Models.PostModels;
 using WoodWorkshop.Domain;
-using WoodWorkshop.Data.Enums;
 using AutoMapper;
 using WoodWorkshop.Domain.Models;
 
@@ -21,7 +20,7 @@ namespace WoodWorkshop.Controllers
                 var map = cfg.CreateMap<CreateWoodFurniturePostModel, WoodFurnitureModel>();
             });
 
-            var mapper = new Mapper(mapperConfig);
+            _mapper = new Mapper(mapperConfig);
         }
 
         public void CreateWoodFurnitureRequest(CreateWoodFurniturePostModel model)
@@ -30,8 +29,12 @@ namespace WoodWorkshop.Controllers
                 throw new System.Exception("Invalid FullName");
             if (model.PhoneNumber.Length != 13)
                 throw new System.Exception("Invalid Phone Number");
-            if((model.FurnitureType<0)||(model.FurnitureType > FurnitureTypes.Bench))
+            if(model.FurnitureType.Length==0)
                 throw new System.Exception("Invalid Furniture Type");
+
+            var woodFurnitureModel = _mapper.Map<WoodFurnitureModel>(model);
+
+            _woodWorkshopService.CreateFurnitureRequest(woodFurnitureModel);
         }
 
 
