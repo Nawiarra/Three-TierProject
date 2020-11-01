@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 using AutoMapper;
 using WoodWorkshop.Data.Models;
 using WoodWorkshop.Data.Repositories;
@@ -12,12 +13,16 @@ namespace WoodWorkshop.Domain
 {
     public class WoodWorkshopService
     {
+        private List <string> NumbersBlackList { get; set; }
         private readonly WoodWorkshopRepository _woodWorkshopRepository;
         private readonly IMapper _mapper;
 
         public WoodWorkshopService()
         {
             _woodWorkshopRepository = new WoodWorkshopRepository();
+
+            NumbersBlackList = new List<string>();
+            GetBlackList();
 
             var mapperConfig = new MapperConfiguration(cfg =>
             {
@@ -27,10 +32,22 @@ namespace WoodWorkshop.Domain
             _mapper = new Mapper(mapperConfig);
         }
 
+        private void GetBlackList()
+        {
+            FileStream file = new FileStream("blacklist.txt", FileMode.Open, FileAccess.Read);
+            StreamReader reader = new StreamReader(file);
+            
+            while(!reader.EndOfStream)
+            {
+                NumbersBlackList.Add(reader.ReadLine());
+            }
+                 
+        }
+
         public void CreateFurnitureRequest(WoodFurnitureModel model)
         {
-            // Проверка ести ли свободное  окно, 
-            // чтобы записать на мойку эту машину
+            if (NumbersBlackList.Any(phone => phone.Equals(model.PhoneNumber)))
+                throw new System.Exception("This phone number in blacklist");
 
             var woodFurniture = _mapper.Map<WoodFurniture>(model);
 

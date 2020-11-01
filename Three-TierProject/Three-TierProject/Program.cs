@@ -21,10 +21,20 @@ namespace Three_TierProject
                 FurnitureType = "Chair",
                 Color = "Blue",
                 WoodType = "Oak"
-
             };
 
             controller.CreateWoodFurnitureRequest(model);
+
+            var model2 = new CreateWoodFurniturePostModel
+            {
+                FullName = "Petr Petrov",
+                PhoneNumber = "+380951111155",
+                FurnitureType = "Chair",
+                Color = "Blue",
+                WoodType = "Oak"
+            };
+
+            controller.CreateWoodFurnitureRequest(model2);
         }
     }
 
