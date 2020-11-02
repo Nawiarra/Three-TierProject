@@ -34,7 +34,7 @@ namespace WoodWorkshop.Domain
 
         private void GetBlackList()
         {
-            FileStream file = new FileStream("blacklist.txt", FileMode.Open, FileAccess.Read);
+            FileStream file = new FileStream("blacklist.txt", FileMode.OpenOrCreate, FileAccess.Read);
             StreamReader reader = new StreamReader(file);
             
             while(!reader.EndOfStream)
