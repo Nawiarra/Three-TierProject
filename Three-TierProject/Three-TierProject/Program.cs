@@ -25,7 +25,7 @@ namespace Three_TierProject
 
             controller.CreateWoodFurnitureRequest(model);
 
-            var createWoodFurniturePostModel = controller.GetItemById(0);
+            var createWoodFurnitureViewModel = controller.GetItemById(0);
 
 
             var model2 = new CreateWoodFurniturePostModel
