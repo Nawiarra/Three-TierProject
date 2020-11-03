@@ -17,7 +17,7 @@ namespace Three_TierProject
             var model = new CreateWoodFurniturePostModel
             {
                 FullName = "Petr Petrov",
-                PhoneNumber = "+380951111111",
+                PhoneNumber = "+380951111155",
                 FurnitureType = "Chair",
                 Color = "Blue",
                 WoodType = "Oak"
@@ -25,10 +25,14 @@ namespace Three_TierProject
 
             controller.CreateWoodFurnitureRequest(model);
 
+            var createWoodFurniturePostModel = controller.GetItemById(0);
+
+
             var model2 = new CreateWoodFurniturePostModel
             {
                 FullName = "Petr Petrov",
-                PhoneNumber = "+380951111155",
+                PhoneNumber = "+380951111166",
+
                 FurnitureType = "Chair",
                 Color = "Blue",
                 WoodType = "Oak"

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,6 +20,26 @@ namespace WoodWorkshop.Data.Repositories
         public void Create(WoodFurniture model)
         {
             WoodFurnitures.Add(model);
+        }
+
+        public WoodFurniture GetItemById(int id)
+        {
+            return WoodFurnitures.First(x => x.Id == id); //  .ToArray()[id];
+        }
+
+        public static List<string> GetBlackList()
+        {
+            List<string> NumbersBlackList = new List<string>();
+
+            FileStream file = new FileStream("blacklist.txt", FileMode.OpenOrCreate, FileAccess.Read);
+            StreamReader reader = new StreamReader(file);
+
+            while (!reader.EndOfStream)
+            {
+                NumbersBlackList.Add(reader.ReadLine());
+            }
+
+            return NumbersBlackList;
         }
     }
 }
