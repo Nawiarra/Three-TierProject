@@ -27,7 +27,7 @@ namespace WoodWorkshop.Data.Repositories
             return WoodFurnitures.First(x => x.Id == id); //  .ToArray()[id];
         }
 
-        public static List<string> GetBlackList()
+        public List<string> GetBlackList()
         {
             List<string> NumbersBlackList = new List<string>();
 

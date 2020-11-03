@@ -32,9 +32,7 @@ namespace WoodWorkshop.Domain
         public void CreateFurnitureRequest(WoodFurnitureModel model)
         {
 
-            List<string> NumbersBlackList = new List<string>();
-
-            NumbersBlackList = WoodWorkshopRepository.GetBlackList();
+            List<string> NumbersBlackList = _woodWorkshopRepository.GetBlackList();
 
             if (NumbersBlackList.Any(phone => phone.Equals(model.PhoneNumber)))
                 throw new System.Exception("This phone number in blacklist");

@@ -3,6 +3,7 @@ using WoodWorkshop.Models.PostModels;
 using WoodWorkshop.Domain;
 using AutoMapper;
 using WoodWorkshop.Domain.Models;
+using WoodWorkshop.Models.ViewModels;
 
 namespace WoodWorkshop.Controllers
 {
@@ -17,7 +18,8 @@ namespace WoodWorkshop.Controllers
 
             var mapperConfig = new MapperConfiguration(cfg =>
             {
-                var map = cfg.CreateMap<CreateWoodFurniturePostModel, WoodFurnitureModel>().ReverseMap();
+                var map = cfg.CreateMap<CreateWoodFurniturePostModel, WoodFurnitureModel>();
+                var map2 = cfg.CreateMap<WoodFurnitureViewModel, WoodFurnitureModel>();
             });
 
             _mapper = new Mapper(mapperConfig);
@@ -37,11 +39,11 @@ namespace WoodWorkshop.Controllers
             _woodWorkshopService.CreateFurnitureRequest(woodFurnitureModel);
         }
 
-        public CreateWoodFurniturePostModel GetItemById(int id)
+        public WoodFurnitureViewModel GetItemById(int id)
         {
             var woodFurnitureModel = _woodWorkshopService.GetItemById(id);
          
-            return _mapper.Map<CreateWoodFurniturePostModel>(woodFurnitureModel);
+            return _mapper.Map<WoodFurnitureViewModel>(woodFurnitureModel);
         }
 
 
