@@ -29,17 +29,17 @@ namespace WoodWorkshop.Data.Repositories
 
         public List<string> GetBlackList()
         {
-            List<string> NumbersBlackList = new List<string>();
+            List<string> numbersBlackList = new List<string>();
 
             FileStream file = new FileStream("blacklist.txt", FileMode.OpenOrCreate, FileAccess.Read);
             StreamReader reader = new StreamReader(file);
 
             while (!reader.EndOfStream)
             {
-                NumbersBlackList.Add(reader.ReadLine());
+                numbersBlackList.Add(reader.ReadLine());
             }
 
-            return NumbersBlackList;
+            return numbersBlackList;
         }
     }
 }
