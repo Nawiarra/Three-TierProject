@@ -27,19 +27,9 @@ namespace WoodWorkshop.Data.Repositories
             return WoodFurnitures.First(x => x.Id == id); //  .ToArray()[id];
         }
 
-        public List<string> GetBlackList()
+        public List<WoodFurniture> GetItemsWithSameName(string name)
         {
-            List<string> numbersBlackList = new List<string>();
-
-            FileStream file = new FileStream("blacklist.txt", FileMode.OpenOrCreate, FileAccess.Read);
-            StreamReader reader = new StreamReader(file);
-
-            while (!reader.EndOfStream)
-            {
-                numbersBlackList.Add(reader.ReadLine());
-            }
-
-            return numbersBlackList;
+            return WoodFurnitures.Where(x=>x.FullName == name).ToList();
         }
     }
 }

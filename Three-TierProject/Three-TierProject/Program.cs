@@ -18,6 +18,7 @@ namespace Three_TierProject
             {
                 FullName = "Petr Petrov",
                 PhoneNumber = "+380951111155",
+                Date = DateTime.UtcNow.ToString("dd.MM.yyyy"),
                 FurnitureType = "Chair",
                 Color = "Blue",
                 WoodType = "Oak"
@@ -32,7 +33,7 @@ namespace Three_TierProject
             {
                 FullName = "Petr Petrov",
                 PhoneNumber = "+380951111166",
-
+                Date = DateTime.UtcNow.ToString("dd.MM.yyyy"),
                 FurnitureType = "Chair",
                 Color = "Blue",
                 WoodType = "Oak"

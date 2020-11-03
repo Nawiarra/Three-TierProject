@@ -9,8 +9,10 @@ namespace WoodWorkshop.Models.PostModels
 {
     public class CreateWoodFurniturePostModel
     {
+
         public string PhoneNumber { get; set; }
         public string FullName { get; set; }
+        public string Date { get; set; }
         public string FurnitureType { get; set; }
         public string Color { get; set; }
         public string WoodType { get; set; }

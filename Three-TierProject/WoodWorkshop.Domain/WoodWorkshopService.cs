@@ -32,10 +32,15 @@ namespace WoodWorkshop.Domain
         public void CreateFurnitureRequest(WoodFurnitureModel model)
         {
 
-            List<string> numbersBlackList = _woodWorkshopRepository.GetBlackList();
+            var ListOfAllUserRequests = _woodWorkshopRepository.GetItemsWithSameName(model.FullName);
 
-            if (numbersBlackList.Any(phone => phone.Equals(model.PhoneNumber)))
-                throw new System.Exception("This phone number in blacklist");
+            var ListsOfEqualsUserFurniture = ListOfAllUserRequests.GroupBy(x => x.Date);
+
+            foreach (var list in ListsOfEqualsUserFurniture)
+            {
+                if (list.Count() > 5)
+                    throw new System.Exception("Users can't buy more than 5 item's in the same day ");
+            }
 
             var woodFurniture = _mapper.Map<WoodFurniture>(model);
 
